@@ -7,20 +7,23 @@ website:
     search: true
     left:
       - text: "Home"
-        file: index.qmd
+        file: website.qmd
       - text: "About" 
         file: about.qmd 
       - text: "Example analysis" 
         file: example.qmd
       - text: "More"
         menu:
-        - index.qmd
+        - website.qmd
         - about.qmd 
         - example.qmd   
+format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: simplex
     toc: true
+    css: styles.css
+    code-overflow: wrap
+
 editor: source
 
 execute:
