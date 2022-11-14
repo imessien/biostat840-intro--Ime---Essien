@@ -1,0 +1,114 @@
+---
+title: "Example Analysis"
+author: 
+  - name: Ime Essien
+    affiliation: Department of Biomedical Engineering, Johns Hopkins
+
+date: 2022-11-05
+---
+
+# Example Analysis
+
+**This is my example analysis**
+
+I am looking in at Airbnb data from the city of San Franciso, this will be used to answer which neighborhoods are the most expensive and which are the cheapest. The intended audience is anyone who is interested in the data and wants to know more about the city of San Francisco.
+
+The data can be found here [Airbnb Data](https://www.kaggle.com/airbnb/san-francisco)
+
+The metadata can be found at the link above [Airbnb Data](https://www.kaggle.com/airbnb/san-francisco)
+
+**Image in the from the dataset**
+
+![Image of San Francisco](https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/San_Francisco_with_two_bridges_and_the_fog.jpg/1200px-San_Francisco_with_two_bridges_and_the_fog.jpg)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(ggmap)
+library(tidyr)
+````
+
+#read in data
+```{r}
+#import airbnb dataset from airbnb san francisco
+airbnb <- read_csv("/Users/imessien/Downloads/listings.csv")
+```
+
+#clean data
+```{r}
+#remove columns that are not needed
+airbnb <- airbnb %>% select(-c(id, name, host_id, host_name, neighbourhood_group, last_review, reviews_per_month, calculated_host_listings_count, availability_365))
+#remove rows with missing values
+#drop_na(airbnb)
+airbnb <- na.omit(airbnb)
+#remove rows with 0 price
+airbnb <- airbnb %>% filter(price != 0)
+#remove rows with 0 minimum nights
+airbnb <- airbnb %>% filter(minimum_nights != 0)
+#remove rows with 0 number of reviews
+airbnb <- airbnb %>% filter(number_of_reviews != 0)
+#remove rows with 0 longitude
+airbnb <- airbnb %>% filter(longitude != 0)
+#remove rows with 0 latitude
+airbnb <- airbnb %>% filter(latitude != 0)
+#remove rows with 0 accommodates
+airbnb <- airbnb %>% filter(accommodates != 0)
+#remove rows with 0 bathrooms
+airbnb <- airbnb %>% filter(bathrooms != 0)
+#pivot data
+airbnb <- airbnb %>% pivot_longer(cols = c(neighbourhood, room_type, price, minimum_nights, number_of_reviews, latitude, longitude), names_to = "variable", values_to = "value")    
+```
+
+#run a cell that glimpse at the data
+```{r}
+glimpse(airbnb)
+#show first 5 rows of data
+head(airbnb)
+```
+
+::: {.callout-note}
+**Note:** This function glimpse at the data and prints the head of the first 5 rows.
+:::
+
+::: {.callout-tip}
+**Tip:** These are my 3 different plots using ggplot2.
+:::
+
+**Plots**
+
+
+```{r}
+#plot 1
+ggplot(airbnb, aes(x = neighbourhood, y = price)) + geom_boxplot() + labs(title = "Price of Airbnb in San Francisco", subtitle = "By Neighborhood", caption = "Data from Airbnb San Francisco") + theme(plot.title = element_text(hjust = 0.5))
+#plot 2
+ggplot(airbnb, aes(x = room_type, y = price)) + geom_boxplot() + labs(title = "Price of Airbnb in San Francisco", subtitle = "By Room Type", caption = "Data from Airbnb San Francisco") + theme(plot.title = element_text(hjust = 0.5))
+#plot 3
+ggplot(airbnb, aes(x = neighbourhood, y = price)) + geom_boxplot() + facet_wrap(~room_type) + labs(title = "Price of Airbnb in San Francisco", subtitle = "By Neighborhood and Room Type", caption = "Data from Airbnb San Francisco") + theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+::: {.column-margin}
+These plots visualize the data from the Airbnb SF dataset. The first plot shows the price of Airbnb in San Francisco by neighborhood. The second plot shows the price of Airbnb in San Francisco by room type. The third plot shows the price of Airbnb in San Francisco by neighborhood and room type.
+:::
+
+
+
+
+
+**Conclusion**
+
+I crearly see that the most expensive neighborhoods are the Marina, Pacific Heights, and Presidio Heights. The cheapest neighborhoods are the Outer Richmond, Outer Sunset, and Bayview. The most expensive room type is an entire home/apt and the cheapest room type is a shared room. The most expensive neighborhood and room type is the Marina and entire home/apt. The cheapest neighborhood and room type is the Outer Richmond and shared room.
+
+**Data Functions**
+The functions I used to go through my data are:
+filter()
+select()
+pivot_longer()
+na.omit()
+geom_boxplot()
+facet_wrap()
+glimpse()
+head()

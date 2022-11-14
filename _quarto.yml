@@ -1,0 +1,27 @@
+project:
+  type: website
+website:
+  title: "Ime Essien Website"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "About" 
+        file: about.qmd 
+      - text: "Example analysis" 
+        file: example.qmd
+      - text: "More"
+        menu:
+        - index.qmd
+        - about.qmd 
+        - example.qmd   
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+editor: source
+
+execute:
+  freeze: auto

@@ -1,0 +1,14 @@
+---
+title: "About Me Page"
+author: 
+  - name: Ime Essien
+    affiliation: Department of Biomedical Engineering, Johns Hopkins
+
+date: 2022-11-05
+---
+
+# My Bio
+
+Ime Essien is a recent graduate of Morgan State University where he received a bachelors and masters in electrical engineering.  He was a recipient of the Martin D. Jenkins Scholarship and the Intel Scholarship. During his collegiate career, he conducted research in artificial intelligence under Dr. Rama Chellappa at Johns Hopkins University. Ime’s research was on machine learning algorithms to demorph facial images and adversarial attacks. Ime served as President of the Morgan State Engineering Student Organization Council, Senator for the National Society of Black Engineers, President of the Morgan State Institute of Electrical and Electronics Engineers Chapter, Tutor for the Advancing Minorities Interest in Engineering organization, and Fellow for HBCUvc, a student-run venture capital organization dedicated to HBCU and HSI students. Leading the Baltimore-Washington area investment team he hosted events, assisted companies, and ran partner meetings. He cohosted HBCUvc’s official podcast, Divergent Unicorns, where he interviewed leading black and brown technologists on how they got started in tech. Also started several hiring and corporate partnerships for HBCUvc including Intel Capital, Redpoint Ventures, and Mark Cuban. Ime participated in their COVID response where he hosted weekly talks with guests tackling issues facing current students during the pandemic, created a resource database, and helped raise $100k to help HBCU students around the country before any other major response team. Finally, he led their in-house accelerator and first request for startups. He previously interned at three different venture capital firms, Intel Capital, Intel’s corporate venture arm, Redpoint Ventures, a tier-one venture firm based in Silicon Valley, and Rarebreed Ventures, a black-led fund. During the internships, he participated in deal meetings and portfolio support while developing an investment thesis on topics. He also started UrConvey, a carpooling application that participated in the Envision Accelerator in the summer of 2020. He will attend Johns Hopkins University for PhD in Biomedical Engineering as a Vivien Thomas Scholar inaugural cohort in Fall 2022. He chose Johns Hopkins University for their collaborative research environment and strong entrepreneurial culture. Ime plans to work with the next generation of black founders at the intersection of biotechnology and machine learning in the future.
+
+

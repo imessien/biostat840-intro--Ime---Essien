@@ -1,0 +1,15 @@
+---
+title: "Ime Essien Website"
+author: 
+  - name: Ime Essien
+    affiliation: Department of Biomedical Engineering, Johns Hopkins
+
+date: 2022-11-05
+---
+
+# About Me
+
+I'm Ime Essien, a PhD student in the Department of Biomedical Engineering at Johns Hopkins University. I'm interested in the intersection of machine learning and bioinformatics. I'm currently working on omics multiview analysis and deep learning for biomedical applications.
+**Here's a picture of me**
+
+![](/Users/imessien/Downloads/_JHU8178.JPG)
