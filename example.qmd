@@ -29,18 +29,18 @@ library(dplyr)
 library(readr)
 library(ggmap)
 library(tidyr)
-````
+```
 
 #read in data
 ```{r}
 #import airbnb dataset from airbnb san francisco
-airbnb <- read_csv("/Users/imessien/Downloads/listings.csv")
+airbnb <- read_csv("listings.csv")
 ```
 
 #clean data
 ```{r}
 #remove columns that are not needed
-airbnb <- airbnb %>% select(-c(id, name, host_id, host_name, neighbourhood_group, last_review, reviews_per_month, calculated_host_listings_count, availability_365))
+airbnb <- airbnb %>% select(-c(id, name, host_id, host_name, last_review, reviews_per_month, calculated_host_listings_count, availability_365))
 #remove rows with missing values
 #drop_na(airbnb)
 airbnb <- na.omit(airbnb)
@@ -59,7 +59,7 @@ airbnb <- airbnb %>% filter(accommodates != 0)
 #remove rows with 0 bathrooms
 airbnb <- airbnb %>% filter(bathrooms != 0)
 #pivot data
-airbnb <- airbnb %>% pivot_longer(cols = c(neighbourhood, room_type, price, minimum_nights, number_of_reviews, latitude, longitude), names_to = "variable", values_to = "value")    
+airbnb <- airbnb %>% pivot_longer(cols = c( room_type, price, number_of_reviews, latitude, longitude), names_to = "variable", values_to = "value")    
 ```
 
 #run a cell that glimpse at the data
